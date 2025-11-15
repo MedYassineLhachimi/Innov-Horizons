@@ -5,21 +5,21 @@ body {
 }
 
 .scroll-to-top {
-  position: fixed;
-  right: 50px;
-  bottom: 50px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: var(--bs-orange);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 100;
-  opacity: 0.7;
-  transition: all .4s;
-  animation: up-down 5s ease-in-out infinite;
+    display: none;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--bs-orange);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0.7;
+    transition: all .4s;
+    animation: up-down 5s ease-in-out infinite;
 }
 
 .scroll-to-top:hover {
@@ -27,9 +27,9 @@ body {
 }
 
 .scroll-to-top svg {
-  width: 20px;
-  transform: rotate(180deg);
-  fill: #fff;
+    width: 20px;
+    transform: rotate(180deg);
+    fill: #fff;
 }
 
 .accordion-button, .navbar-toggler {
@@ -64,12 +64,12 @@ body {
 .special-btn {
     width: fit-content;
     padding: 15px 30px;
-    border: 2px solid var(--bs-orange);
+    border: 2px solid var(--bs-orange) !important;
     transition: all .4s;
 }
 
 .special-btn:hover {
-    background-color: var(--bs-orange);
+    background-color: var(--bs-orange) !important;
     color: #fff !important;
 }
 
@@ -346,6 +346,16 @@ nav .phone-number span img {
     width: 12px;
 }
 
+/* quote section */
+.quote {
+    background-image: url(../images/bg-shape.png);
+    background-position: center;
+}
+
+.quote p {
+    max-width: 800px;
+}
+
 /* Faq section */
 .faq .image img {
     max-width: 70%; 
@@ -358,18 +368,68 @@ nav .phone-number span img {
     }
 }
 
+/* Contact section */
+.contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .image img:nth-child(1) {
+    max-width: 60%;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact .image img:nth-child(2) {
+    max-width: 100%;
+    filter: brightness(0) saturate(100%) invert(61%) sepia(85%) saturate(4800%) hue-rotate(10deg) brightness(90%) contrast(115%);
+    z-index: -1;
+}
+
+@media (max-width: 992px) {
+    .contact .image img:nth-child(1) {
+        max-width: 60%;
+    }
+    .contact .image img:nth-child(2) {
+        display: block;
+        max-width: 80%;
+        margin: 0 auto
+    }
+    
+}
+
+@media (max-width: 992px) {
+    .contact .image {
+        margin-top: 100px;
+    }
+}
+
+/* contact section */
+.contact input,
+.contact textarea {
+    outline: none !important;
+    border: 1px solid #F0EAE2;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border: 1px dotted var(--bs-orange);
+}
+
+.contact textarea {
+    min-height: 130px;
+    resize: none;
+}
+
+
 /* Footer */
 footer {
     padding-top: 100px;
     background-color: #101A29;
 }
-
-/* @media (min-width: 992px) {
-    footer .container  div:nth-child(2) {
-        margin-left: 0px;
-    }
-} */
-
 
 footer .logo {
     width: 100px;
@@ -395,5 +455,5 @@ footer ul li svg  path{
 
 
 footer .footer-bottom {
-    background-color: #333F4D;
+    border-top: 1px solid #232C3A;
 }
